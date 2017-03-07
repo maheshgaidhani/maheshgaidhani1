@@ -1,0 +1,9 @@
+3)
+SQL> select Department.Dname as DEPARTMENT_NAME ,count(*) as NUMBER_OF_EMPLOYEES from Employee inner join Department on Employee.Deptno=Department.Deptno g
+roup by Department.Dname;
+
+DEPARTMENT_NAME      NUMBER_OF_EMPLOYEES
+-------------------- -------------------
+HR                                     1
+Account                                1
+Finance                                1

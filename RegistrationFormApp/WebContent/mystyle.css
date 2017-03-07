@@ -1,0 +1,26 @@
+<style>
+
+.button2{
+       border: 3px double #FC6;
+       border-top-color:#FC9;
+	border-left-color:#FC9;
+	width:25%;
+	color:#900;
+	font-weight: bold;
+}
+tr{
+ background-color:#def;
+ 
+}
+td{
+    width:30%;
+    height: 30px;
+    color: red;
+    background:transparent;
+
+}
+
+body{
+        background-color:lightblue;
+}
+</style>

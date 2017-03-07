@@ -1,0 +1,69 @@
+<web-app>
+<welcome-file-list>
+<welcome-file>Form1.html</welcome-file>
+</welcome-file-list>
+  <context-param>
+	     <param-name>driver</param-name>
+		 <param-value>com.mysql.jdbc.Driver</param-value>
+	  </context-param>
+  	  <context-param>
+	     <param-name>url</param-name>
+		 <param-value>jdbc:mysql://localhost:3306/mahesh</param-value>
+	  </context-param>
+
+	  <context-param>
+	     <param-name>dbuser</param-name>
+		 <param-value>root</param-value>
+	  </context-param>
+	  <context-param>
+	     <param-name>dbpwd</param-name>
+		 <param-value>root</param-value>
+	  </context-param>
+	
+
+
+      <servlet>
+      <servlet-name>reg</servlet-name>
+	  <servlet-class>com.nt.servlet.RegistrationServlet</servlet-class>
+	  
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>reg</servlet-name>
+	  <url-pattern>/regurl</url-pattern>
+</servlet-mapping>
+    <servlet>
+      <servlet-name>reg1</servlet-name>
+	  <servlet-class>com.nt.servlet.Records</servlet-class>
+	  
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>reg1</servlet-name>
+	  <url-pattern>/regurl1</url-pattern>
+</servlet-mapping>
+  <servlet>
+      <servlet-name>d1</servlet-name>
+	  <servlet-class>com.nt.servlet.DeleteServlet</servlet-class>
+	  
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>d1</servlet-name>
+	  <url-pattern>/deleteurl</url-pattern>
+</servlet-mapping>
+<servlet>
+ <servlet-name>e1</servlet-name>
+	  <servlet-class>com.nt.servlet.EditServlet</servlet-class>
+	  </servlet>
+	<servlet-mapping>
+	  <servlet-name>e1</servlet-name>
+	  <url-pattern>/editurl</url-pattern>
+</servlet-mapping>
+<servlet>
+<servlet-name>e2</servlet-name>
+	  <servlet-class>com.nt.servlet.EditForm</servlet-class>
+	  </servlet>
+	<servlet-mapping>
+	  <servlet-name>e2</servlet-name>
+	  <url-pattern>/editfrm</url-pattern>
+</servlet-mapping>
+
+</web-app>

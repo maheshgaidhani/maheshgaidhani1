@@ -1,0 +1,156 @@
+<html>
+<head>
+<title>Registration Form</title>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<style>
+.button2{
+       border: 3px double #FC6;
+       border-top-color:#FC9;
+	border-left-color:#FC9;
+	width:25%;
+	color:#900;
+	font-weight: bold;
+}
+.button{   border: 3px double #FC6;
+       border-top-color:#FC9;
+	border-left-color:#FC9;
+	width:20%;
+	color:#900;
+	font-weight: bold;
+	
+}
+</style>
+<script type="text/javascript">
+function passwordCheck()
+{
+    var pwd=document.getElementById("txtPwd").value;
+
+   
+	var pattern=/(?=.*[A-Z])\w{6,15}/;
+	
+	if(pwd.match(pattern))
+	{
+		document.getElementById("strength").value="10";
+		document.getElementById("msg").innerHTML="Strong Password";
+		
+	}
+	else
+	{
+		document.getElementById("strength").value="3";
+		document.getElementById("msg").innerHTML="Weak Password(1 uppercase*)";
+                return false;
+   
+
+    }
+   
+}
+function phoneCheck()
+{
+    var phone=document.getElementById("phone").value;
+	var phonePattern=/[0-9]/;
+     if(phone.match(phonePattern))
+    {
+        
+    }else
+    {
+     alert("enter valid mo. no.");
+    }
+
+}
+function validateform(){  
+	
+var name=document.myform.uname.value;  
+var password=document.myform.pass.value;
+var confirmpassword=document.myform.cpass.value;
+var firstname=document.myform.fname.value;
+var lastname=document.myform.lname.value;
+var email=document.myform.email.value;
+var phone=document.myform.phone.value; 
+var location=document.myform.location.value;
+
+if (name==null || name==""){  
+
+ alert("Name can't be blank");  
+
+
+ return false;  
+ }
+ else if(password.length<6){  
+    alert("Password must be at least 6 characters long and it must contains 1 Uppercase letter and number."); 
+     
+    return false;  
+  }  
+  else if(confirmpassword!=password)
+ {
+    alert("Enter confirm password same as password");
+return false;
+  }
+else if (firstname==null || firstname==""){  
+ alert("FirstName can't be blank");  
+  return false;
+ }
+ else if (lastname==null || lastname==""){  
+ alert("LastName can't be blank");  
+  return false;
+ }
+else if (email==null || email==""){  
+ document.getElementById("msg1").value="enter emailId";
+  
+  return false;
+ }else if (phone.length<10 || phone.length>10){  
+ alert("please enter valid Mobile no.");  
+  return false;
+ }else if(location==null || location==""){  
+ alert("please enter location");  
+  return false;
+ }
+
+}  
+function checkEmail()
+{var email=document.getElementById("em").value;;
+ var pattern= /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/; 
+    if (email == "" )
+ {
+  alert("email should not be empty");
+  return false;
+  }else if(!pattern.test(email)){
+ 
+  alert("enter the valid email");
+  return false;
+  }
+ 
+}
+</script>
+</head>
+<body>
+<h2><font color="maroon"><center>Registration Form</center></font></h2>
+<form name="myform"action="regurl" method="post" onsubmit="return validateform()" >
+<h3><center><a href="regurl1">View All Records</a></center></h3>
+<b><table align="center">
+<tr>
+<td>
+<b>Username</td></b><td><input type="text" name="uname" placeholder="enter username"/><div id="error"></div></td></tr><br/>
+<tr><td>
+<b>Password</td></b><td><input type="password" id="txtPwd" name="pass" placeholder="enter password" onkeyup="passwordCheck()"><br/><meter id="strength" min="1" max="10">
+</meter><span id="msg"></span></td>
+</tr><br/>
+<tr>
+<td><b>Confirm Password</td></b><td><input type="password" name="cpass" placeholder="confirm password"/></td></tr><br/>
+<tr>
+<td><b>First Name</td></b><td><input type="text" name="fname" placeholder="enter firstname"/></td></tr><br/>
+<tr>
+<td><b>Last Name</td></b><td><input type="text" name="lname"placeholder="enter lastname"/></td></tr><br/>
+<tr>
+<td><b>Email</td></b><td><input type="text" name="email"placeholder="enter email" id="em" onblur="checkEmail()"/><br/><span id="msg1"></span></td></tr>
+<tr>
+<td><b>Mo. No:</td></b><td><input type="text" name="phone" id="phone"placeholder="enter mo.no" onblur="phoneCheck()"/></td></tr><br/>
+<tr>
+<td><b>Location</td></b><td><input type="text" name="location"placeholder="enter location"/></td></tr><br/>
+<tr>
+<td></td><b></b><td><input type="submit" value="Save" class="button"/>
+<input type="Reset" value="Reset" class="button2"/></td></tr><br/>
+</td></table></b>
+
+</form>
+</body>
+</html>
